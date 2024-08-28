@@ -1,0 +1,30 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
+
+# Ignore publish output
+publish/
+
+# Ignore node_modules
+**/node_modules/*
+
+**/certificates/*

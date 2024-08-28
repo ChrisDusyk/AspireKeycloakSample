@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireKeycloak.AppHost", "AspireKeycloak.AppHost\AspireKeycloak.AppHost.csproj", "{4DA45CC9-581F-48D2-8A6D-BA4D4F59B338}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireKeycloak.ServiceDefaults", "AspireKeycloak.ServiceDefaults\AspireKeycloak.ServiceDefaults.csproj", "{B67A04E7-D513-462D-AAD4-5D65D3B1D06D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireKeycloak.ApiService", "AspireKeycloak.ApiService\AspireKeycloak.ApiService.csproj", "{5C7012C1-8233-4967-B26A-4851B29B5204}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireKeycloak.Web", "AspireKeycloak.Web\AspireKeycloak.Web.csproj", "{988C2335-11CF-4801-A8B7-3DAC36C493A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireKeycloak.Tests", "AspireKeycloak.Tests\AspireKeycloak.Tests.csproj", "{52E35DDD-DF8A-4B69-934D-871FE1661486}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DA45CC9-581F-48D2-8A6D-BA4D4F59B338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA45CC9-581F-48D2-8A6D-BA4D4F59B338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA45CC9-581F-48D2-8A6D-BA4D4F59B338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA45CC9-581F-48D2-8A6D-BA4D4F59B338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B67A04E7-D513-462D-AAD4-5D65D3B1D06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B67A04E7-D513-462D-AAD4-5D65D3B1D06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B67A04E7-D513-462D-AAD4-5D65D3B1D06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B67A04E7-D513-462D-AAD4-5D65D3B1D06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7012C1-8233-4967-B26A-4851B29B5204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7012C1-8233-4967-B26A-4851B29B5204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7012C1-8233-4967-B26A-4851B29B5204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7012C1-8233-4967-B26A-4851B29B5204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{988C2335-11CF-4801-A8B7-3DAC36C493A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988C2335-11CF-4801-A8B7-3DAC36C493A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988C2335-11CF-4801-A8B7-3DAC36C493A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988C2335-11CF-4801-A8B7-3DAC36C493A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E35DDD-DF8A-4B69-934D-871FE1661486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E35DDD-DF8A-4B69-934D-871FE1661486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E35DDD-DF8A-4B69-934D-871FE1661486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E35DDD-DF8A-4B69-934D-871FE1661486}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94B5F46D-4D2F-4A80-98D9-62B46ED1A52F}
+	EndGlobalSection
+EndGlobal

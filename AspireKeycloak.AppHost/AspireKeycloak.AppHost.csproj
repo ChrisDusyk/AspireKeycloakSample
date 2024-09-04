@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AspireKeycloak.ApiService\AspireKeycloak.ApiService.csproj" />
+    <ProjectReference Include="..\AspireKeycloak.EventConsumer\AspireKeycloak.EventConsumer.csproj" />
     <ProjectReference Include="..\AspireKeycloak.Web\AspireKeycloak.Web.csproj" />
   </ItemGroup>
 

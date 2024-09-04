@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.Azure.Messaging.EventHubs" Version="8.2.0" />
     <PackageReference Include="Aspire.Keycloak.Authentication" Version="8.1.0-preview.1.24373.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspireKeycloak.MessageContracts\AspireKeycloak.MessageContracts.csproj" />
     <ProjectReference Include="..\AspireKeycloak.ServiceDefaults\AspireKeycloak.ServiceDefaults.csproj" />
   </ItemGroup>
 

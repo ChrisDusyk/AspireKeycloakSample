@@ -11,13 +11,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AspireKeycloak.ApiService\AspireKeycloak.ApiService.csproj" />
+    <ProjectReference Include="..\AspireKeycloak.EventConsumer\AspireKeycloak.EventConsumer.csproj" />
     <ProjectReference Include="..\AspireKeycloak.Web\AspireKeycloak.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.1.0" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0" />
+    <PackageReference Include="Aspire.Hosting.Azure.EventHubs" Version="8.2.0" />
     <PackageReference Include="Aspire.Hosting.Keycloak" Version="8.1.0-preview.1.24373.2" />
-    <PackageReference Include="Aspire.Hosting.NodeJs" Version="8.1.0" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="8.2.0" />
   </ItemGroup>
 
 </Project>

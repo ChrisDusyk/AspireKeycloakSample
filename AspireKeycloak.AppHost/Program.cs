@@ -7,8 +7,17 @@ var keycloak = builder
     .AddKeycloak("keycloak", port: 8080, adminUsername: adminUsername, adminPassword: adminPassword)
     .WithDataVolume();
 
+var blob = builder.AddAzureStorage("eventhubStorage")
+    .RunAsEmulator()
+    .AddBlobs("checkpoints");
+
+var eventHubs = builder.AddAzureEventHubs("eventhubs")
+    .RunAsEmulator()
+    .AddEventHub("keycloakhub");
+
 var apiService = builder.AddProject<Projects.AspireKeycloak_ApiService>("apiservice")
-    .WithReference(keycloak);
+    .WithReference(keycloak)
+    .WithReference(eventHubs);
 
 builder.AddProject<Projects.AspireKeycloak_Web>("webfrontend")
     .WithExternalHttpEndpoints()
@@ -21,5 +30,9 @@ builder.AddNpmApp("react", "../AspireKeycloak.React", scriptName: "dev")
     .WithHttpsEndpoint(isProxied: false, port: 3000)
     .WithExternalHttpEndpoints()
     .PublishAsDockerFile();
+
+builder.AddProject<Projects.AspireKeycloak_EventConsumer>("eventconsumer")
+    .WithReference(blob)
+    .WithReference(eventHubs);
 
 builder.Build().Run();

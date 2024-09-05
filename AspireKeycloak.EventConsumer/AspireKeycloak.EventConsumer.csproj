@@ -1,19 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-AspireKeycloak.EventConsumer-e5781441-c92d-413f-b107-638269220a5b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Azure.Messaging.EventHubs" Version="8.2.0" />
-    <PackageReference Include="Aspire.Keycloak.Authentication" Version="8.1.0-preview.1.24373.2" />
+    <PackageReference Include="Aspire.Azure.Storage.Blobs" Version="8.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AspireKeycloak.MessageContracts\AspireKeycloak.MessageContracts.csproj" />
     <ProjectReference Include="..\AspireKeycloak.ServiceDefaults\AspireKeycloak.ServiceDefaults.csproj" />
   </ItemGroup>
-
 </Project>

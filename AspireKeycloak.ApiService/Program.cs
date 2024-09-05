@@ -1,3 +1,9 @@
+using AspireKeycloak.MessageContracts;
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Producer;
+using System.Text;
+using System.Text.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
@@ -23,6 +29,11 @@ builder.Services.AddCors(opts =>
     opts.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
+builder.AddAzureEventHubProducerClient("eventhubs", static config =>
+{
+    config.EventHubName = "keycloakhub";
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,7 +44,7 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/weatherforecast", async (EventHubProducerClient eventHubClient) =>
 {
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
@@ -43,6 +54,15 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
+    var reportEvent = new ReportingMessage()
+    {
+        Text = "Weather forecast generated",
+        Timestamp = DateTimeOffset.UtcNow
+    };
+    using EventDataBatch batch = await eventHubClient.CreateBatchAsync();
+    batch.TryAdd(new EventData(Encoding.UTF8.GetBytes(JsonSerializer.Serialize(reportEvent))));
+    await eventHubClient.SendAsync(batch);
+
     return forecast;
 })
     .RequireAuthorization();
